@@ -1,28 +1,46 @@
 {
-  "name": "yakbak",
-  "version": "4.0.0",
-  "description": "Record and playback HTTP responses",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint cli.js index.js lib test",
-    "test": "mocha"
+  "_from": "file:/Users/danielrutkovsky/SYNETECH/Backend/yakbak/yakbak-4.0.0.tgz",
+  "_id": "yakbak@4.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-7YStO+b8QvF7zbYuCIgvvYSbkwRNQJcskQrFa8bcfC4BQxFIuJKIHnJfjcB2NvdHUnfrCREyodBMADSPrBRFIg==",
+  "_location": "/yakbak",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/Users/danielrutkovsky/SYNETECH/InternalServices/mock",
+    "raw": "yakbak@file:/Users/danielrutkovsky/SYNETECH/Backend/yakbak/yakbak-4.0.0.tgz",
+    "name": "yakbak",
+    "escapedName": "yakbak",
+    "rawSpec": "file:/Users/danielrutkovsky/SYNETECH/Backend/yakbak/yakbak-4.0.0.tgz",
+    "saveSpec": "file:/Users/danielrutkovsky/SYNETECH/Backend/yakbak/yakbak-4.0.0.tgz",
+    "fetchSpec": "/Users/danielrutkovsky/SYNETECH/Backend/yakbak/yakbak-4.0.0.tgz"
   },
-  "keywords": [
-    "http",
-    "https",
-    "record",
-    "playback",
-    "mock",
-    "service",
-    "vcr"
+  "_requiredBy": [
+    "/"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:flickr/yakbak.git"
+  "_resolved": "/Users/danielrutkovsky/SYNETECH/Backend/yakbak/yakbak-4.0.0.tgz",
+  "_shasum": "7f8530d3be632371d28f658222349022613946a9",
+  "_spec": "yakbak@file:/Users/danielrutkovsky/SYNETECH/Backend/yakbak/yakbak-4.0.0.tgz",
+  "_where": "/Users/danielrutkovsky/SYNETECH/InternalServices/mock",
+  "author": {
+    "name": "Jeremy Ruppel"
   },
-  "bin": "./cli.js",
-  "author": "Jeremy Ruppel",
-  "license": "MIT",
+  "bin": {
+    "yakbak": "./cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/flickr/yakbak/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "bluebird": "~3.3.4",
+    "debug": "^3.1.0",
+    "ejs": "^2.5.5",
+    "incoming-message-hash": "^4.0.0",
+    "mkdirp": "~0.5.0"
+  },
+  "deprecated": false,
+  "description": "Record and playback HTTP responses",
   "devDependencies": {
     "eslint": "^4.18.2",
     "eslint-config-flickr": "^2.0.1",
@@ -32,11 +50,26 @@
     "semver": "^5.1.0",
     "supertest": "^4.0.2"
   },
-  "dependencies": {
-    "bluebird": "~3.3.4",
-    "debug": "^3.1.0",
-    "ejs": "^2.5.5",
-    "incoming-message-hash": "^4.0.0",
-    "mkdirp": "~0.5.0"
-  }
+  "homepage": "https://github.com/flickr/yakbak#readme",
+  "keywords": [
+    "http",
+    "https",
+    "record",
+    "playback",
+    "mock",
+    "service",
+    "vcr"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "yakbak",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/flickr/yakbak.git"
+  },
+  "scripts": {
+    "lint": "eslint cli.js index.js lib test",
+    "test": "mocha"
+  },
+  "version": "4.0.0"
 }

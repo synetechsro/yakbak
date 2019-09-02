@@ -33,6 +33,7 @@ module.exports = function (host, opts) {
       var file = path.join(opts.dirname, tapename(req, body));
 
       return Promise.try(function () {
+        console.log(`Serving ${file}`)
         return require.resolve(file);
       }).catch(ModuleNotFoundError, function (/* err */) {
 
@@ -40,7 +41,8 @@ module.exports = function (host, opts) {
           throw new RecordingDisabledError('Recording Disabled');
         } else {
           return proxy(req, body, host).then(function (pres) {
-            return record(pres.req, pres, file);
+            console.log(`Recording request for ${req.path}`)
+            return record(pres.req, pres, file, bodyEditor);
           });
         }
 
@@ -61,6 +63,16 @@ module.exports = function (host, opts) {
   };
 
   /**
+   * Returns edited body.
+   * @param {String} body
+   * @returns {String}
+   */
+
+  function bodyEditor(body) {
+    return  opts.editBody(body) || body;
+  }
+
+  /**
    * Returns the tape name for `req`.
    * @param {http.IncomingMessage} req
    * @param {Array.<Buffer>} body
@@ -70,7 +82,9 @@ module.exports = function (host, opts) {
   function tapename(req, body) {
     var hash = opts.hash || messageHash.sync;
 
-    return hash(req, Buffer.concat(body)) + '.js';
+    const r = req
+    r.header["cookie"] = undefined
+    return `${req.path.split("/").join("_")}_${hash(r, Buffer.concat(body))}.js`;
   }
 
 };
